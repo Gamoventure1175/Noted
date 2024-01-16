@@ -1,9 +1,7 @@
-import React from 'react'
 import NotesList from '@/components/NotesList';
-import  Grid  from '@mui/material/Grid'
-import {Box, Typography} from '@mui/material'
 import { getCurrentUser } from '@/models/Users';
 import { currentUser } from '@clerk/nextjs';
+
 
 const createOrGetUser = async() => {
 
@@ -33,12 +31,11 @@ const createOrGetUser = async() => {
 
 export default async function Notes() {
     const user = await currentUser()
-    console.log(user)
     
     if (!user) {
         return(
-            <div className=" text-center">
-                Log in to view content
+            <div className="text-center text-2xl">
+                Log in to view your notes
             </div>
         )
     }

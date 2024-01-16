@@ -13,6 +13,7 @@ export async function PUT(request, {params}) {
     }
 }
 
+
 export async function DELETE(request, {params}) {
     try {
         const {userId} = await request.json()
@@ -24,6 +25,7 @@ export async function DELETE(request, {params}) {
         return NextResponse.json({message: "Could not delete note"})
     }
 }
+
 
 export async function GET(request, {params}) {
     try {

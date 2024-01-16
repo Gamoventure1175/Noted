@@ -18,7 +18,7 @@ function EditNote({noteId, title, body, userId}) {
         try {
             const res = await fetch(`http://localhost:3000/api/note/${noteId}`,{
                 method: 'PUT',
-                header: {
+                headers: {
                     "Content-type": "application/json"
                 },
                 body: JSON.stringify({newTitle, newBody, userId})
@@ -67,7 +67,7 @@ function EditNote({noteId, title, body, userId}) {
             type='submit'
             variant='outlined'
         >
-            Edit Blog
+            Edit Note
         </Button>
     </Box>
     </form>

@@ -1,12 +1,12 @@
 'use client'
 
 import React from 'react'
-import {useAuth, UserButton, SignUpButton} from '@clerk/nextjs'
-import {Button, Box, IconButton} from '@mui/material'
-import NoteAddIcon from '@mui/icons-material/NoteAdd';
+import {useUser, UserButton, SignUpButton} from '@clerk/nextjs'
+import {Button, Box, Typography} from '@mui/material'
+
 
 function  NavOptions() {
-    const {isLoaded, isSignedIn} = useAuth()
+    const {isLoaded, isSignedIn} = useUser()
 
     if (!isLoaded || !isSignedIn) {
         return(
@@ -24,9 +24,6 @@ function  NavOptions() {
         <Box 
             sx={{display: 'flex', alignItems:'center', gap: 1}}
         >
-            <IconButton href='/newPost'>
-                <NoteAddIcon sx={{fontSize: '1.5em'}}/>
-            </IconButton>
             <UserButton appearance={{elements: {userButtonAvatarBox: {width:40, height: 40}}}} />
         </Box>
     )

@@ -1,40 +1,40 @@
-// 'use client';
+'use client'
 
-// import { useRouter } from 'next/navigation';
-// import React from 'react';
-// import {MdDelete} from 'react-icons/md'
-// import {IconButton} from '@mui/material'
+import IconButton from '@mui/material/Button'
+import DeleteIcon from '@mui/icons-material/Delete';
+import {useRouter} from 'next/navigation'
 
+function RemoveBtn({noteId, userId}) {
 
-// function RemoveBtn({id}) {
-//   const router = useRouter();
+    const router = useRouter();
 
-//   const removeBlog = async() => {
-//     const confirmed = confirm("Are You Sure?");
-//     if (confirmed) {
-//       try {
-//         const res = await fetch(`http://localhost:3000/api/blogs?id=${id}`, {
-//           method: 'DELETE'
-//         })
+    const removeNote = async() => {
+        const confirmed = confirm("Are you sure? ");
+        if (confirmed) {
+            try {
+                const res = await fetch(`http://localhost:3000/api/note/${noteId}`, {
+                    method: "DELETE",
+                    cache: "no-store",
+                    body: JSON.stringify({userId})
+                })
 
-//         if (res.ok) {
-//           router.refresh();
-//         } else {
-//           throw new Error("Could Not Delete Blog");
-//         }
-//       } catch (error) {
-//         console.log(error)
-//       }
-//     }
-//   }
-  
-//   return (
-//     <>
-//         <IconButton onClick={removeBlog}>
-//             <MdDelete />
-//         </IconButton>
-//     </>
-//   )
-// }
+                if (!res.ok) {
+                    throw new Error("Could not delete note")
+                }
 
-// export default RemoveBtn
+                router.push("/");
+                router.refresh();
+
+            } catch (error) {
+                
+            }
+        }
+
+    }
+
+  return (
+        <DeleteIcon onClick={removeNote} />
+  )
+}
+
+export default RemoveBtn

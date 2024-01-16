@@ -1,4 +1,4 @@
-
+import AddButton from './AddButton';
 import React from 'react';
 import RemoveBtn from './RemoveBtn';  
 import {AiFillEdit} from 'react-icons/ai';
@@ -10,6 +10,9 @@ import CardActions from '@mui/material/CardActions';
 import CardHeader from '@mui/material/CardHeader';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import Container from '@mui/material/Container';
+import NoteAddIcon from '@mui/icons-material/NoteAdd';
 
 const getAllNotes = async() => {
   try {
@@ -33,41 +36,58 @@ const getAllNotes = async() => {
 export default async function NotesList() {
 
   const allNotes = await getAllNotes()
+  if (Array.from(allNotes).length === 0) {
+    return (
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6} md={4}>
+        <Card raised sx={{width: "100%", height: "100%", display: "flex", alignItems:"center", justifyContent:"center", boxSizing: "content-box"}}>
+          <IconButton href='/newNote'>
+            <NoteAddIcon sx={{fontSize: '2em'}}/>
+          </IconButton>
+        </Card>
+        </Grid>
+      </Grid>
+    )
+  }
 
 
   
   return (
-    <Grid container spacing={2}>
-     {Array.from(allNotes).map((note) => (
-        <Grid item xs={12} sm={6} md={4} key={note.id}>
-          <Card>
-            <CardHeader 
-              title={note.title}
-              subheader={`${note.author.firstName} ${note.author.lastName}`}
-              action={
-                <IconButton href={`http://localhost:3000/editNote/${note.id}`}>
-                  <AiFillEdit />
-                </IconButton>
-              }
-            />
-            <CardContent>
-              <Typography variant="h6" color="text.secondary">
-                {note.body}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <IconButton>
-                <AiFillEdit />
-              </IconButton>
-            </CardActions>
-          </Card>
+    <Container sx={{p:0, m:0}}>
+        <AddButton />
+        <Grid container spacing={2}>
+        {Array.from(allNotes).map((note) => (
+            <Grid item xs={12} sm={6} md={4} key={note.id}>
+              <Card raised sx={{p: 2}}>
+                <CardHeader 
+                  title={note.title}
+                  subheader={`${note.author.firstName} ${note.author.lastName}`}
+                  action={
+                    <IconButton href={`http://localhost:3000/editNote/${note.id}`}>
+                      <AiFillEdit />
+                    </IconButton>
+                  }
+                />
+                <Divider variant="middle" />
+                <CardContent>
+                  <Typography variant="h6" color="text.secondary">
+                    {note.body}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <IconButton >
+                    <RemoveBtn noteId={note.id} userId={note.authorId} />
+                  </IconButton>
+                </CardActions>
+              </Card>
+          </Grid>
+          ))}
       </Grid>
-      ))}
-  </Grid>
+    </Container>
   );
 }
 
-
+// sx={{width: "100%", height: "100%", display: "flex", alignItems:"center", justifyContent:"center", boxSizing: "content-box"}}
 
 
 
