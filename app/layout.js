@@ -1,5 +1,4 @@
 import Navbar from '@/components/Navbar';
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import './globals.css';
 import { Container} from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
@@ -21,7 +20,7 @@ export default async function RootLayout({ children }) {
   
   
   return (
-    <SpeedInsights>
+
       <ClerkProvider>
         <ThemeProvider theme={theme}>
           <html lang="en">
@@ -35,6 +34,6 @@ export default async function RootLayout({ children }) {
           </html>
         </ThemeProvider>
       </ClerkProvider>
-    </SpeedInsights>
+
   )
 }
