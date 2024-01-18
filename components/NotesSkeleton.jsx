@@ -8,7 +8,6 @@ import Container from "@mui/material/Container";
 
 function NotesSkeleton() {
     const {sessionId} = auth()
-    console.log(sessionId)
     const tests = [1,2,3]
 
     if (sessionId == null) {

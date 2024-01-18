@@ -1,6 +1,7 @@
 import NotesList from '@/components/NotesList';
 import { getCurrentUser } from '@/models/Users';
 import { currentUser } from '@clerk/nextjs';
+import { auth } from '@clerk/nextjs';
 
 
 const createOrGetUser = async() => {
@@ -30,16 +31,21 @@ const createOrGetUser = async() => {
 } 
 
 export default async function Notes() {
-    const user = await currentUser()
+    const {sessionId} = auth()
     
-    if (!user) {
+    if (!sessionId) {
         return(
             <div className="text-center text-2xl">
                 Log in to view your notes
             </div>
         )
     }
-    await createOrGetUser()
+    try {
+        await createOrGetUser()
+    } catch (error) {
+        console.log(error)
+    }
+    
     return(
         <NotesList />
     )

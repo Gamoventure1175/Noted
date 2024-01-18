@@ -36,6 +36,7 @@ const getAllNotes = async() => {
 export default async function NotesList() {
 
   const allNotes = await getAllNotes()
+
   if (Array.from(allNotes).length === 0) {
     return (
       <Grid container spacing={2}>
