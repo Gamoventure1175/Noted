@@ -20,7 +20,7 @@ const AddButton = () => {
     const {push} = useRouter();
 
   return (
-    <Card sx={{zIndex: 99, position: 'fixed', bottom: 30, right: 30, borderRadius: "50%"}} raised theme={theme}>
+    <Card sx={{zIndex: 99, position: 'fixed', bottom: 30, right: 30, borderRadius: "50%"}} raised >
         <IconButton onClick={() => push("/newNote")}>
             <MyIconButton theme={theme} />
         </IconButton>

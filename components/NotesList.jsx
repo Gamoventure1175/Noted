@@ -12,7 +12,6 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
-import NoteAddIcon from '@mui/icons-material/NoteAdd';
 
 const getAllNotes = async() => {
   try {
@@ -39,15 +38,12 @@ export default async function NotesList() {
 
   if (Array.from(allNotes).length === 0) {
     return (
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6} md={4}>
-        <Card raised sx={{width: "100%", height: "100%", display: "flex", alignItems:"center", justifyContent:"center", boxSizing: "content-box"}}>
-          <IconButton href='/newNote'>
-            <NoteAddIcon sx={{fontSize: '2em'}}/>
-          </IconButton>
-        </Card>
-        </Grid>
-      </Grid>
+      <Container sx={{p: 0, m: 0}}>
+        <AddButton />
+        <Typography variant='h3'>
+          No notes created yet
+        </Typography>
+      </Container>
     )
   }
 

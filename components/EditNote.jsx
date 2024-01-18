@@ -3,7 +3,6 @@
 import { useRouter } from 'next/navigation';
 import React, { Component, useState } from 'react'
 import {Box, TextField, Button} from '@mui/material'
-import FormControl from '@mui/material'
 
 function EditNote({noteId, title, body, userId}) {
 
