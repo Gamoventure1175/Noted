@@ -16,7 +16,7 @@ function EditNote({noteId, title, body, userId}) {
         e.preventDefault();
         
         try {
-            const res = await fetch(`http://localhost:3000/api/note/${noteId}`,{
+            const res = await fetch(`https://notedgamovneture.vercel.app/api/note/${noteId}`,{
                 method: 'PUT',
                 headers: {
                     "Content-type": "application/json"

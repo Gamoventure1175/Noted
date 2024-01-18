@@ -11,7 +11,7 @@ const createOrGetUser = async() => {
         const existingUser = await getCurrentUser(user.id)
         
         if (!existingUser) {
-        const res = await fetch("http://localhost:3000/api/user",
+        const res = await fetch("https://notedgamovneture.vercel.app/api/user",
         {
             method: "POST", 
             cache: "no-store",
