@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Container from "@mui/material/Container";
 
-function Loading() {
+function NotesSkeleton() {
     const {sessionId} = auth()
     console.log(sessionId)
     const tests = [1,2,3]
@@ -42,4 +42,4 @@ function Loading() {
   )
 }
 
-export default Loading
+export default NotesSkeleton

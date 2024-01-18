@@ -2,7 +2,7 @@
 
 import {createTheme, responsiveFontSizes, styled} from '@mui/material/styles';
 import {Space_Mono, Montserrat} from 'next/font/google';
-import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
 
 const spaceMono = Space_Mono({
     weight: ['400', '700'],
@@ -27,6 +27,9 @@ export let theme = createTheme({
         },
         info: {
             main: "#c303f3"
+        },
+        contrastText: {
+            main: "#3c5c87"
         }
     },
     typography: {
@@ -36,5 +39,4 @@ export let theme = createTheme({
 })
 
 theme = responsiveFontSizes(theme);
-
 

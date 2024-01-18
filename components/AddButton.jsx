@@ -9,7 +9,7 @@ import {useRouter} from 'next/navigation'
 
 const MyIconButton = styled(AddIcon) (({theme})=> ({
     backgroundColor: theme.palette.primary.main,
-    color: 'white',
+    color: theme.palette.contrastText.main,
     borderRadius: "50%",
     fontSize: "3.3em",
     padding: "2px",

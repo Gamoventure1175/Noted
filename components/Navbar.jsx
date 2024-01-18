@@ -17,7 +17,7 @@ function Navbar() {
             <IconButton
               size='large'
               edge='start'
-              sx={{alignItems: "center", borderRadius: 2}}
+              sx={{alignItems: "center", borderRadius: 2, color: "#3c5c87"}}
               onClick={() => {
                 push("/");
                 refresh();

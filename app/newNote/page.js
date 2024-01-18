@@ -1,10 +1,20 @@
 'use client'
 import { useState } from "react"
 import { useAuth } from "@clerk/nextjs"
-import {Box, TextField, Button} from '@mui/material'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import TextField from '@mui/material/TextField'
 import { useRouter } from "next/navigation"
+import { theme } from "@/theme"
+import {styled} from '@mui/material/styles'
+
 
 function page() {
+
+    // for (let i = 1; i <=438; i++ ) {
+    //     console.log(i)
+    // }
+
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     const router = useRouter();
@@ -69,6 +79,7 @@ function page() {
                 aria-label='submit'
                 type='submit'
                 variant='outlined'
+                sx={{width: 'fit-content', backgroundColor: '#92ceff'}}
             >
                 Create Note
             </Button>
