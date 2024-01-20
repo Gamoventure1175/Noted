@@ -33,7 +33,7 @@ export let theme = createTheme({
         }
     },
     typography: {
-        fontFamily: montSerrat.style.fontFamily,
+        fontFamily: montSerrat.style.fontStyle,
         fontSize: 16
     }
 })
