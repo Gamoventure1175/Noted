@@ -25,11 +25,13 @@ export default async function RootLayout({ children }) {
         <ThemeProvider theme={theme}>
           <html lang="en">
             <body>
-                  <CssBaseline />
-                    <Navbar />
-                    <Container maxWidth='xl'>
-                      <AppRouterCacheProvider options={{ enableCssLayer: true }}>{children}</AppRouterCacheProvider>
-                    </Container>
+              <CssBaseline />
+                <Navbar />
+                <Container maxWidth='xl'>
+                  <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+                    {children}
+                  </AppRouterCacheProvider>
+                </Container>
             </body>
           </html>
         </ThemeProvider>

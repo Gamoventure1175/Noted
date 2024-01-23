@@ -1,8 +1,12 @@
 'use client'
 
 import React from 'react'
-import {useUser, UserButton, SignUpButton} from '@clerk/nextjs'
-import {Button, Box, Typography} from '@mui/material'
+import {useUser} from '@clerk/nextjs'
+import UserProfileButton from './CustomUserButton'
+import dynamic from 'next/dynamic'
+
+const SignUp = dynamic(() => import("./SignUpButton"))
+const UserProfile = dynamic(() => import("./CustomUserButton"))
 
 
 function  NavOptions() {
@@ -10,22 +14,12 @@ function  NavOptions() {
 
     if (!isLoaded || !isSignedIn) {
         return(
-            <Box>
-                <SignUpButton mode='modal'>
-                    <Button variant='contained'>
-                        Sign Up
-                    </Button>
-                </SignUpButton>
-            </Box>
+            <SignUp />
         )
     }
 
     return(
-        <Box 
-            sx={{display: 'flex', alignItems:'center', gap: 1}}
-        >
-            <UserButton appearance={{elements: {userButtonAvatarBox: {width:40, height: 40, }}}} />
-        </Box>
+        <UserProfile />
     )
 }
 

@@ -2,7 +2,7 @@ import EditNote from "@/components/EditNote";
 
 const getNoteById = async(id) => {
     try {
-        const res = await fetch(`http://localhost:3000/api/note/${id}`, {
+        const res = await fetch(`https://notedgamovneture.vercel.app/api/note/${id}`, {
             method: "GET",
             cache: "no-store"
         })

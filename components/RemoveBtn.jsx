@@ -12,7 +12,7 @@ function RemoveBtn({noteId, userId}) {
         const confirmed = confirm("Are you sure? ");
         if (confirmed) {
             try {
-                const res = await fetch(`http://localhost:3000/api/note/${noteId}`, {
+                const res = await fetch(`https://notedgamovneture.vercel.app/note/${noteId}`, {
                     method: "DELETE",
                     cache: "no-store",
                     body: JSON.stringify({userId})

@@ -16,7 +16,7 @@ import Container from '@mui/material/Container';
 const getAllNotes = async() => {
   try {
     const user = await currentUser()
-    const res = await fetch(`http://localhost:3000/api/user/${user.id}`,
+    const res = await fetch(`https://notedgamovneture.vercel.app/api/user/${user.id}`,
     {
       cache: "no-store",
       method: "GET",
