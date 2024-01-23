@@ -5,7 +5,7 @@ import {useUser} from '@clerk/nextjs'
 import UserProfileButton from './CustomUserButton'
 import dynamic from 'next/dynamic'
 
-const SignUp = dynamic(() => import("./SignUpButton"))
+const SignUp = dynamic(() => import("./SignupButton"))
 const UserProfile = dynamic(() => import("./CustomUserButton"))
 
 
