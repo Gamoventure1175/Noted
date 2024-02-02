@@ -23,7 +23,12 @@ function CustomUserButton() {
       </Card>
       <Card raised>
         <Box>
-          <Button sx={{color: "#3c5c87", fontWeight: "500"}} onClick={signOutFunction}>Sign Out</Button>
+          <Button 
+            sx={{color: "#3c5c87", fontWeight: "500"}} 
+            onClick={signOutFunction}
+          >
+            Sign Out
+          </Button>
         </Box>
       </Card>
     </Box>
