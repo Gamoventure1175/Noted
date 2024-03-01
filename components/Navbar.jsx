@@ -4,6 +4,7 @@ import { AppBar, Toolbar, IconButton, Typography, Tooltip, Box, Card } from '@mu
 import {useRouter} from 'next/navigation'
 import NavOptions from './NavOptions';
 import DescriptionIcon from '@mui/icons-material/Description';
+import { theme } from '@/theme';
 
 // import NavOptions from './NavOptions';
 
@@ -11,14 +12,14 @@ import DescriptionIcon from '@mui/icons-material/Description';
 function Navbar() {
   const {push, refresh} = useRouter();
   return (
-      <AppBar position="sticky"  sx={{height:"4.8em", marginBottom: 3, justifyContent: 'center'}}>
+      <AppBar position="sticky"  sx={{height:"4.8em", marginBottom: 3, justifyContent: 'center', color: theme.palette.text.main}}>
         <Toolbar variant="dense" sx={{justifyContent: 'space-between'}}>
           <Tooltip title="Noted" placement="bottom">
             <Card sx={{m: 0, p: 0, boxSizing: "border-box"}} raised>
               <IconButton
                 size='large'
                 edge='start'
-                sx={{ borderRadius: 2, color: "#3c5c87", p: "5px", backgroundColor: "white"}}
+                sx={{ borderRadius: 2, p: "5px", backgroundColor: "white"}}
                 onClick={() => {
                   push("/");
                   refresh();

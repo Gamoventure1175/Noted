@@ -20,21 +20,28 @@ const montSerrat = Montserrat({
 export let theme = createTheme({
     palette: {
         primary: {
-            main: "#92ceff"
+            main: "#6cdaf3"
         },
         secondary: {
-            main: "#ffc392"
+            main: "#ffd085"
         },
         info: {
             main: "#c303f3"
         },
         contrastText: {
             main: "#3c5c87"
+        },
+        accent: {
+            main: "#6fa1ff"
+        },
+        text: {
+            main: "#444444"
         }
     },
     typography: {
         fontFamily: montSerrat.style.fontStyle,
-        fontSize: 16
+        fontSize: 16,
+        
     }
 })
 

@@ -24,7 +24,7 @@ export default async function RootLayout({ children }) {
       <ClerkProvider>
         <ThemeProvider theme={theme}>
           <html lang="en">
-            <body>
+            <body >
               <CssBaseline />
                 <Navbar />
                 <Container maxWidth='xl'>
