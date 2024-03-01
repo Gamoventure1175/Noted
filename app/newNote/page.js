@@ -28,7 +28,7 @@ function page() {
 
 
         try {
-            const res = await fetch(`https://notedgamoventure.vercel.app/api/note`, {
+            const res = await fetch(`https://notegamoventure.vercel.app/api/note`, {
                 method: "POST",
                 cache: "no-store",
                 headers: {

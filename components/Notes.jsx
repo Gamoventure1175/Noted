@@ -11,7 +11,7 @@ const createOrGetUser = async() => {
         const existingUser = await getCurrentUser(user.id)
         
         if (!existingUser) {
-        const res = await fetch("https://notedgamoventure.vercel.app/api/user",
+        const res = await fetch("https://notegamoventure.vercel.app/api/user",
         {
             method: "POST", 
             cache: "no-store",
